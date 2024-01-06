@@ -106,9 +106,9 @@ h3 {
 }
 
 .nav-header {
-	justify-self: flex-start;
 	display: flex;
 	gap: 35%;
+	justify-self: flex-start;
 }
 
 .header-button {
@@ -131,7 +131,9 @@ main {
 	flex-direction: column;
 	justify-content: center;
 }
-
+.image {
+	width: 80%;
+}
 .article-flex {
 	display: flex;
 	align-items: center;
@@ -148,6 +150,10 @@ main {
 	top: -35px;
 	z-index: -1;
 	margin-bottom: 40px;
+}
+
+.wrapper-dev-section {
+	width: 80%;
 }
 
 .section-grid {
@@ -195,11 +201,7 @@ main {
 }
 
 .grid {
-	display: grid;
-	grid-template-columns: 966px;
-	width: 966px;
-	margin: auto;
-	justify-content: center;
+	display: flex;
 	background-image: url("assets/image/background.png");
 	background-size: cover;
 	justify-content: center;
@@ -246,22 +248,7 @@ main {
 	padding-top: 60px;
 }
 
-.footer-item1 {
-	grid: footer-item1;
-}
-
-.nav-footer1 {
-	grid: nav-footer1;
-}
-.nav-footer2 {
-	grid: nav-footer2;
-}
-.nav-footer3 {
-	grid: nav-footer3;
-}
-
 .footer-button {
-	grid: footer-button;
 	grid-column: 1/5;
 }
 
@@ -321,6 +308,7 @@ main {
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 50px;
+	width: max-content;
 }
 
 .footer-left {
@@ -336,4 +324,56 @@ main {
 	flex-direction: row;
 	justify-content: flex-end;
 	gap: 70px;
+}
+
+@media (max-width: 1180px) {
+	.nav-header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-self: center;
+	}
+
+	.section-grid {
+		margin-top: 80px;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 50px;
+		align-items: center;
+		justify-content: center;
+		justify-items: center;
+	}
+	.section1-grid {
+		margin-top: 80px;
+		display: grid;
+		grid-template-columns: minmax(398px, 1fr);
+		gap: 50px;
+		align-items: center;
+		justify-content: stretch;
+		justify-items: stretch;
+	}
+
+	.footer-grid {
+		display: block;
+		width: 100%;
+	}
+
+	.footer-top {
+		/* grid-column: 1/5; */
+		margin-bottom: 5%;
+		justify-self: center;
+		align-self: center;
+	}
+	[class*="nav-footer"] {
+		/* grid-column: 1/5; */
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.footer-left {
+		flex-wrap: wrap;
+	}
+	.nav-footer-button {
+		display: none;
+	}
 }
